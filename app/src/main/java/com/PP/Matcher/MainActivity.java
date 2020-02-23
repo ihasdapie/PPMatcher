@@ -1,4 +1,4 @@
-package com.example.ppmatcher;
+package com.PP.Matcher;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +11,6 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
 
 public class MainActivity extends AppCompatActivity {
 

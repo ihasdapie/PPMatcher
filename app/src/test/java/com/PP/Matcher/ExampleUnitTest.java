@@ -1,4 +1,4 @@
-package com.example.ppmatcher;
+package com.PP.Matcher;
 
 import org.junit.Test;
 

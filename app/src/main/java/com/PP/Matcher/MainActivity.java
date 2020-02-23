@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 

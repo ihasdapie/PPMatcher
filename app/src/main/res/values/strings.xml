@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">PPMatcher</string>
+    <string name="app_name" translatable="false">PPMatcher</string>
+    <string name="login_or_signup" translatable="false">Login or Sign up</string>
+    <string name="signup" translatable="false">Sign up</string>
+    <string name="login" translatable="false">Log in</string>
+    <string name="Email" translatable="false">E-mail</string>
+    <string name="Password" translatable="false">Password</string>
+    <string name="Registration_Error" translatable="false">Registration Error</string>
+    <string name="Login_Error" translatable="false">Login Error</string>
+    <string name="Personal_Profile_Matcher" translatable="false">Personal Profile Matcher</string>
+    <string name="A_University_Application_Based_Dating_App" translatable="false">An University Application-Based Dating App</string>
+
 </resources>

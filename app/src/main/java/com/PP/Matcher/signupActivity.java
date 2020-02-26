@@ -66,6 +66,9 @@ public class signupActivity extends AppCompatActivity {
 						if (task.isSuccessful() == false){
 							Toast.makeText(signupActivity.this, "Registration Error", Toast.LENGTH_SHORT).show();
 						}
+						if (task.isSuccessful()){
+							Toast.makeText(signupActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
+						}
 					}
 				});
 			}

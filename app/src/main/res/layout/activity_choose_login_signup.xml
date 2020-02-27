@@ -56,7 +56,6 @@
         android:id="@+id/activityChooseLoginSignup_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
         android:fontFamily="sans-serif-thin"
         android:text="@string/A_University_Application_Based_Dating_App"
 

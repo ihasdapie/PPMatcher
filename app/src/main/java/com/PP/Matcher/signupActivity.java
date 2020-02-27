@@ -20,8 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class signupActivity extends AppCompatActivity {
 
 	private Button mSignup;
-	private EditText mEmail, mPassword;
-
+	private EditText mEmail, mPassword, mConfirmPassword;
 	private FirebaseAuth mFirebaseAuth;
 	private FirebaseAuth.AuthStateListener mFireBaseAuthListener;
 
@@ -49,9 +48,10 @@ public class signupActivity extends AppCompatActivity {
 		};
 
 
-		mSignup = findViewById(R.id.activitySignup_signupButton);
+		mSignup = findViewById(R.id.signupActivity_signupButton);
 		mEmail = findViewById(R.id.signupActivity_editTextEmail);
 		mPassword = findViewById(R.id.signupActivity_editTextPassword);
+		mConfirmPassword = findViewById(R.id.signupActivity_editTextConfirmPassword);
 
 		mSignup.setOnClickListener(new View.OnClickListener() {
 		//signup user with signup button
@@ -59,18 +59,24 @@ public class signupActivity extends AppCompatActivity {
 			public void onClick(View v) {
 				final String email = mEmail.getText().toString();
 				final String pw = mPassword.getText().toString();
-				mFirebaseAuth.createUserWithEmailAndPassword(email, pw).addOnCompleteListener(signupActivity.this, new OnCompleteListener<AuthResult>() {
-					@Override
-					//check if successful
-					public void onComplete(@NonNull Task<AuthResult> task) {
-						if (task.isSuccessful() == false){
-							Toast.makeText(signupActivity.this, "Registration Error", Toast.LENGTH_SHORT).show();
+				final String confirm_pw = mConfirmPassword.getText().toString();
+
+				if (confirm_pw == pw) {
+					mFirebaseAuth.createUserWithEmailAndPassword(email, pw).addOnCompleteListener(signupActivity.this, new OnCompleteListener<AuthResult>() {
+						@Override
+						//check if successful
+						public void onComplete(@NonNull Task<AuthResult> task) {
+							if (task.isSuccessful() == false) {
+								Toast.makeText(signupActivity.this, "Registration Error", Toast.LENGTH_SHORT).show();
+							}
+							if (task.isSuccessful()) {
+								Toast.makeText(signupActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
+							}
 						}
-						if (task.isSuccessful()){
-							Toast.makeText(signupActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
-						}
-					}
-				});
+					});
+				} else {
+					Toast.makeText(signupActivity.this, "Registration Error: Passwords do not match", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 	}

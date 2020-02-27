@@ -18,12 +18,11 @@
         android:textSize="24sp"
         android:typeface="normal"
 
+        app:layout_constraintBottom_toTopOf="@id/loginActivity_text2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/loginActivity_text2"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/loginActivity_text2"
@@ -81,6 +80,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.638" />
+
+    <Button
+        android:id="@+id/loginActivity_backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/back"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class signupActivity extends AppCompatActivity {
 
-	private Button mSignup;
+	private Button mSignup, mBack;
 	private EditText mEmail, mPassword, mConfirmPassword;
 	private FirebaseAuth mFirebaseAuth;
 	private FirebaseAuth.AuthStateListener mFireBaseAuthListener;
@@ -52,6 +52,17 @@ public class signupActivity extends AppCompatActivity {
 		mEmail = findViewById(R.id.signupActivity_editTextEmail);
 		mPassword = findViewById(R.id.signupActivity_editTextPassword);
 		mConfirmPassword = findViewById(R.id.signupActivity_editTextConfirmPassword);
+		mBack = findViewById(R.id.signupActivity_backButton);
+
+		mBack.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(signupActivity.this, chooseLoginSignupActivity.class);
+				startActivity(intent);
+				finish();
+				return;
+			}
+		});
 
 		mSignup.setOnClickListener(new View.OnClickListener() {
 		//signup user with signup button

@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class loginActivity extends AppCompatActivity {
 
-	private Button mLogin;
+	private Button mLogin, mBack;
 	private EditText mEmail, mPassword;
 
 	private FirebaseAuth mFirebaseAuth;
@@ -36,7 +36,7 @@ public class loginActivity extends AppCompatActivity {
 		mFireBaseAuthListener = new FirebaseAuth.AuthStateListener() {
 			@Override
 			public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-				//if auth state changes, do something
+				//if auth state changes, go from loginActivity (this) to MainActivity
 				final FirebaseUser mUsr = FirebaseAuth.getInstance().getCurrentUser();
 				if (mUsr != null){
 					Intent intent = new Intent(loginActivity.this, MainActivity.class);
@@ -48,10 +48,21 @@ public class loginActivity extends AppCompatActivity {
 			}
 		};
 
-
+		mBack = findViewById(R.id.loginActivity_backButton);
 		mLogin = findViewById(R.id.loginActivity_loginButton);
 		mEmail = findViewById(R.id.loginActivity_editTextEmail);
 		mPassword = findViewById(R.id.loginActivity_editTextPassword);
+
+		mBack.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(loginActivity.this, chooseLoginSignupActivity.class);
+				startActivity(intent);
+				finish();
+				return;
+			}
+		});
+
 
 		mLogin.setOnClickListener(new View.OnClickListener() {
 			//signup user with signup button

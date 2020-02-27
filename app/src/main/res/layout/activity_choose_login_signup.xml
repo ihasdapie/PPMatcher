@@ -6,69 +6,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".chooseLoginSignupActivity">
-
-    <TextView
-        android:id="@+id/activityChooseLoginSignup_text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
-        android:background="#00771717"
-        android:fontFamily="sans-serif-thin"
-        android:text="@string/Personal_Profile_Matcher"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="24sp"
-        android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".chooseLoginSignupActivity"
+    tools:ignore="ExtraText">
 
     <Button
         android:id="@+id/activityChooseLoginSignup_signupButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="355dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginRight="156dp"
-        android:fontFamily="sans-serif-thin"
         android:text="@string/signup"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="sans-serif-light"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <Button
+
         android:id="@+id/activityChooseLoginSignup_loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="410dp"
         android:fontFamily="sans-serif-thin"
         android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/activityChooseLoginSignup_signupButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005" />
+
+        />
 
     <TextView
+        android:gravity="center"
+        android:id="@+id/activityChooseLoginSignup_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/Personal_Profile_Matcher"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        android:typeface="normal"
+
+        app:layout_constraintBottom_toTopOf="@id/activityChooseLoginSignup_text2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+    <TextView
+        android:gravity="center"
         android:id="@+id/activityChooseLoginSignup_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="192dp"
         android:fontFamily="sans-serif-thin"
         android:text="@string/A_University_Application_Based_Dating_App"
-        app:layout_constraintHorizontal_bias="0.492"
+
+        app:layout_constraintBottom_toTopOf="@id/activityChooseLoginSignup_signupButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

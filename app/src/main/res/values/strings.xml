@@ -9,5 +9,7 @@
     <string name="Login_Error" translatable="false">Login Error</string>
     <string name="Personal_Profile_Matcher" translatable="false">Personal Profile Matcher</string>
     <string name="A_University_Application_Based_Dating_App" translatable="false">An University Application-Based Dating App</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
 
 </resources>

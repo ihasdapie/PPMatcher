@@ -53,6 +53,18 @@ public class loginActivity extends AppCompatActivity {
 		mEmail = findViewById(R.id.loginActivity_editTextEmail);
 		mPassword = findViewById(R.id.loginActivity_editTextPassword);
 
+		mEmail.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mEmail.getText().clear();
+			}
+		});
+		mPassword.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mPassword.getText().clear();
+			}
+		});
 		mBack.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

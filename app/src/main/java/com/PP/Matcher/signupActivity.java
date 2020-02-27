@@ -54,6 +54,25 @@ public class signupActivity extends AppCompatActivity {
 		mConfirmPassword = findViewById(R.id.signupActivity_editTextConfirmPassword);
 		mBack = findViewById(R.id.signupActivity_backButton);
 
+		mEmail.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mEmail.getText().clear();
+			}
+		});
+		mPassword.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mPassword.getText().clear();
+			}
+		});
+		mConfirmPassword.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mConfirmPassword.getText().clear();
+			}
+		});
+
 		mBack.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -72,7 +91,7 @@ public class signupActivity extends AppCompatActivity {
 				final String pw = mPassword.getText().toString();
 				final String confirm_pw = mConfirmPassword.getText().toString();
 
-				if (confirm_pw == pw) {
+				if (confirm_pw.equals(pw))
 					mFirebaseAuth.createUserWithEmailAndPassword(email, pw).addOnCompleteListener(signupActivity.this, new OnCompleteListener<AuthResult>() {
 						@Override
 						//check if successful
@@ -85,7 +104,7 @@ public class signupActivity extends AppCompatActivity {
 							}
 						}
 					});
-				} else {
+				else {
 					Toast.makeText(signupActivity.this, "Registration Error: Passwords do not match", Toast.LENGTH_LONG).show();
 				}
 			}

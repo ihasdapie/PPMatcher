@@ -26,66 +26,81 @@
         app:layout_constraintBottom_toTopOf="@id/signupActivity_text2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/signupActivity_text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-thin"
         android:text="@string/register"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="24sp"
         android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@id/signupActivity_editTextEmailLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
-        app:layout_constraintBottom_toTopOf="@id/signupActivity_editTextEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.734" />
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupActivity_editTextEmailLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/signupActivity_editTextPasswordLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent">
+            <EditText
+                android:id="@+id/signupActivity_editTextEmail"
+                android:inputType="textEmailAddress"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/Email"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/signupActivity_editTextEmail"
-        android:inputType="textEmailAddress"
-        android:layout_width="310dp"
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/signupActivity_editTextPasswordLayout"
+            app:endIconMode="password_toggle"
+            app:layout_constraintBottom_toTopOf="@id/signupActivity_editTextConfirmPasswordLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent">
+        <EditText
+            android:id="@+id/signupActivity_editTextPassword"
+            android:inputType="textPassword"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"
+            android:hint= "@string/Password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-thin"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/Email"
-        app:layout_constraintBottom_toTopOf="@+id/signupActivity_editTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/signupActivity_editTextPassword"
-        android:inputType="textPassword"
-        android:layout_width="310dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-thin"
-        android:hint= "@string/Password"
-        app:layout_constraintBottom_toTopOf="@id/signupActivity_editTextConfirmPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/signupActivity_editTextConfirmPassword"
-        android:inputType="textPassword"
-        android:layout_width="310dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif-thin"
-        android:hint="@string/confirm_password"
+        android:id="@+id/signupActivity_editTextConfirmPasswordLayout"
+        app:endIconMode="password_toggle"
         app:layout_constraintBottom_toTopOf="@id/signupActivity_signupButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+        <EditText
+            android:id="@+id/signupActivity_editTextConfirmPassword"
+            android:inputType="textPassword"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-thin"
+            android:hint="@string/confirm_password"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/signupActivity_signupButton"
@@ -111,6 +126,6 @@
         android:layout_marginLeft="30dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

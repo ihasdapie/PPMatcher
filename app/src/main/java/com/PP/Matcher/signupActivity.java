@@ -47,25 +47,28 @@ public class signupActivity extends AppCompatActivity {
 			}
 		};
 
-
 		mSignup = findViewById(R.id.signupActivity_signupButton);
-		mEmail = findViewById(R.id.signupActivity_editTextEmail);
+		mEmail =  findViewById(R.id.signupActivity_editTextEmail);
 		mPassword = findViewById(R.id.signupActivity_editTextPassword);
 		mConfirmPassword = findViewById(R.id.signupActivity_editTextConfirmPassword);
 		mBack = findViewById(R.id.signupActivity_backButton);
 
-		mEmail.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mEmail.getText().clear();
-			}
-		});
-		mPassword.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				mPassword.getText().clear();
-			}
-		});
+		//TextClearing (try to handle w/ app:endIconMode)
+//		mEmail.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				mEmail.getText().clear();
+//			}
+//		});
+//		mPassword.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				mPassword.getText().clear();
+//			}
+//		});
+
+
+
 		mConfirmPassword.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

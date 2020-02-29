@@ -44,12 +44,13 @@
 
     <EditText
         android:id="@+id/loginActivity_editTextEmail"
+        android:inputType="textEmailAddress"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-thin"
 
-        android:text="@string/Email"
+        android:hint="@string/Email"
         app:layout_constraintBottom_toTopOf="@+id/loginActivity_editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -58,11 +59,12 @@
 
     <EditText
         android:id="@+id/loginActivity_editTextPassword"
+        android:inputType="textPassword"
+        android:hint="@string/Password"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-thin"
-        android:text="@string/Password"
         app:layout_constraintBottom_toTopOf="@+id/loginActivity_loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"

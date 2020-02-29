@@ -12,5 +12,6 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="register">Register</string>
     <string name="back">Back</string>
+    <string name="create_profile">Create Profile</string>
 
 </resources>

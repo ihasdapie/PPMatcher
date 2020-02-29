@@ -36,27 +36,41 @@
         android:textSize="24sp"
         android:typeface="normal"
 
-        app:layout_constraintBottom_toTopOf="@id/loginActivity_editTextEmail"
+        app:layout_constraintBottom_toTopOf="@id/loginActivity_editTextEmailLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.784" />
 
-    <EditText
-        android:id="@+id/loginActivity_editTextEmail"
-        android:inputType="textEmailAddress"
-        android:layout_width="310dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif-thin"
-
-        android:hint="@string/Email"
-        app:layout_constraintBottom_toTopOf="@+id/loginActivity_editTextPassword"
+        android:id="@+id/loginActivity_editTextEmailLayout"
+        app:endIconMode="clear_text"
+        app:layout_constraintBottom_toTopOf="@+id/loginActivity_editTextPasswordLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+        <EditText
+            android:id="@+id/loginActivity_editTextEmail"
+            android:inputType="textEmailAddress"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-thin"
+            android:hint="@string/Email"/>
 
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginActivity_editTextPasswordLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/loginActivity_loginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:endIconMode="password_toggle">
     <EditText
         android:id="@+id/loginActivity_editTextPassword"
         android:inputType="textPassword"
@@ -64,11 +78,8 @@
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif-thin"
-        app:layout_constraintBottom_toTopOf="@+id/loginActivity_loginButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:fontFamily="sans-serif-thin" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/loginActivity_loginButton"

@@ -117,7 +117,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:prompt="@string/faculty_school_etc"/>
 
             <EditText
                 android:id="@+id/ppCreatorActivity_editTextPrompt1"
@@ -165,7 +166,7 @@
             <EditText
                 android:id="@+id/ppCreatorActivity_editTextPrompt3"
                 android:layout_width="match_parent"
-                android:layout_height="mat"
+                android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"

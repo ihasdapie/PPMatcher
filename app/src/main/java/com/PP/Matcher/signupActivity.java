@@ -39,6 +39,7 @@ public class signupActivity extends AppCompatActivity {
 				final FirebaseUser mUsr = FirebaseAuth.getInstance().getCurrentUser();
 				if (mUsr != null){
 					Intent intent = new Intent(signupActivity.this, MainActivity.class);
+					intent.putExtra("mUSER_ID", mFirebaseAuth.getCurrentUser());
 					startActivity(intent);
 					finish();
 					return;

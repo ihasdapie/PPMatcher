@@ -79,100 +79,139 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"/>
 
+            <EditText
+                android:id="@+id/ppCreatorActivity_editTextUserYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:inputType="number"
+                android:hint="@string/my_year"/>
+            <EditText
+                android:id="@+id/ppCreatorActivity_editTextUserAverage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:inputType="number"
+                android:hint="My Average (%)"/>
+
             <TextView
                 android:id="@+id/ppCreatorActivity_textViewUserFaculty"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-thin"
-                android:text="@string/interest_similarity"/>
+                android:text="@string/i_am_in_the_faculty_school_etc_of"/>
 
             <Spinner
+                android:id="@+id/ppCreatorActivity_spinnerUserFaculty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-
-                />
-
-
-
-            <!-- ToDO: Consider seekbar orientation input-->
-            <RadioGroup
-                android:id="@+id/ppCreatorActivity_radioGroupSelectOrientation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                >
-                <RadioButton
-                    android:id="@+id/ppCreatorActivity_radioButtonOrientationMale"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/male"
-                    android:fontFamily="sans-serif-thin"/>
-                <RadioButton
-                    android:id="@+id/ppCreatorActivity_radioButtonOrientationFemale"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/female"
-                    android:fontFamily="sans-serif-thin"/>
-                <RadioButton
-                    android:id="@+id/ppCreatorActivity_radioButtonOrientationOther"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/other"
-                    android:fontFamily="sans-serif-thin"/>
-
-            </RadioGroup>
+                android:layout_marginTop="10dp" />
 
             <TextView
-                android:id="@+id/ppCreatorActivity_textViewSelectInterest"
+                android:id="@+id/ppCreatorActivity_textViewUserFacultyInterest"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-thin"
                 android:text="@string/i_am_interested_in"/>
-            <!-- ToDO: Consider seekbar orientation input-->
-            <RadioGroup
-                android:id="@+id/ppCreatorActivity_radioGroupSelectInterest"
+            <Spinner
+                android:id="@+id/ppCreatorActivity_spinnerUserFacultyInterest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                >
-                <RadioButton
-                    android:id="@+id/ppCreatorActivity_radioButtonInterestMale"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/male"
-                    android:fontFamily="sans-serif-thin"/>
-                <RadioButton
-                    android:id="@+id/ppCreatorActivity_radioButtonInterestFemale"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/female"
-                    android:fontFamily="sans-serif-thin"/>
-                <RadioButton
-                    android:id="@+id/ppCreatorActivity_radioButtonInterestOther"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/other"
-                    android:fontFamily="sans-serif-thin"/>
-            </RadioGroup>
+                android:layout_marginTop="10dp" />
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-light"
+                android:inputType="textMultiLine"
+                android:hint="@string/prompt_1"/>
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-light"
+                android:inputType="textMultiLine"
+                android:hint="@string/response_1"/>
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-light"
+                android:inputType="textMultiLine"
+                android:hint="@string/prompt_2"/>
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-light"
+                android:inputType="textMultiLine"
+                android:hint="@string/response_2"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-light"
+                android:inputType="textMultiLine"
+                android:hint="@string/prompt_3"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-light"
+                android:inputType="textMultiLine"
+                android:hint="@string/response_3"/>
+
+            <!--ToDo: Create Terms of Service & hyperlink to (them)-->
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/ppCreatorActivity_checkBoxTermsOfService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "@string/i_agree_to_the_terms_of_service"
+                android:fontFamily="sans-serif-thin"
+                android:layout_marginBottom="5dp" />
+
+            <Button
+                android:id="@+id/ppCreatorActivity_createProfileButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
+                android:text="@string/create_profile"
+                android:layout_marginBottom="40dp" />
 
         </LinearLayout>
     </ScrollView>

@@ -104,6 +104,11 @@ public class signupActivity extends AppCompatActivity {
 							}
 							if (task.isSuccessful()) {
 								Toast.makeText(signupActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
+								Toast.makeText(signupActivity.this, "Next Step: Create Profile", Toast.LENGTH_SHORT).show();
+								Intent intent = new Intent(signupActivity.this, ppCreatorActivity.class);
+								startActivity(intent);
+								finish();
+								return;
 							}
 						}
 					});

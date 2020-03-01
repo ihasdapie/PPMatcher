@@ -25,6 +25,43 @@
     <string name="other">Other</string>
     <string name="i_am_interested_in">I am interested in:</string>
     <string name="interest_similarity"><![CDATA[I am interested in (Similar) <--> (Different) People]]></string>
-
+    <string name="i_am_in_the_faculty_school_etc_of">I am in the Faculty/School/etc. of:</string>
+    <string name="my_year">My year:</string>
+    <string name="year_interested_low">Year interested (low)</string>
+    <string name="year_interested_high">Year interested (high)</string>
+    <string name="response_1">Response #1</string>
+    <string name="prompt_1">Prompt #1</string>
+    <string name="prompt_2">Prompt #2</string>
+    <string name="response_2">Response #2</string>
+    <string name="prompt_3">Prompt #3</string>
+    <string name="response_3">Response #3</string>
+    <string-array name="faculty_array">
+        <item>Applied Science</item>
+        <item>Architecture and Landscape Architecture</item>
+        <item>Arts</item>
+        <item>Audiology and Speech Sciences</item>
+        <item>Sauder Business</item>
+        <item>Community and Regional Planning</item>
+        <item>Continuing Studies</item>
+        <item>Education</item>
+        <item>Dentistry</item>
+        <item>Environmental Health</item>
+        <item>Forestry</item>
+        <item>Graduate Studies</item>
+        <item>Health Disciplines</item>
+        <item>Kinesiology</item>
+        <item>Interdisciplinary Studies</item>
+        <item>Journalism</item>
+        <item>Land and Food Systems</item>
+        <item>Peter A Allard Law</item>
+        <item>iSchool</item>
+        <item>Medicine</item>
+        <item>Music</item>
+        <item>Nursing</item>
+        <item>Population and Health Studies</item>
+        <item>Pharmaceutical Sciences</item>
+        <item>Science</item>
+        <item>Social Work</item>
+    </string-array>
 
 </resources>

@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/signupActivity_editTextConfirmPasswordLayout"
         app:endIconMode="password_toggle"
-        app:layout_constraintBottom_toTopOf="@id/signupActivity_signupButton"
+        app:layout_constraintBottom_toTopOf="@id/signupActivity_buttonSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent">
@@ -103,7 +103,7 @@
 
 
     <Button
-        android:id="@+id/signupActivity_signupButton"
+        android:id="@+id/signupActivity_buttonSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
@@ -116,7 +116,7 @@
         app:layout_constraintVertical_bias="0.85" />
 
     <Button
-        android:id="@+id/signupActivity_backButton"
+        android:id="@+id/signupActivity_buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"

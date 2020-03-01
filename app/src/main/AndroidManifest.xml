@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ppCreatorActivity"></activity>
+        <activity android:name=".ppCreatorActivity" />
         <activity android:name=".loginActivity" />
         <activity android:name=".signupActivity" />
         <activity android:name=".MainActivity" />

@@ -47,11 +47,11 @@ public class signupActivity extends AppCompatActivity {
 			}
 		};
 
-		mSignup = findViewById(R.id.signupActivity_signupButton);
+		mSignup = findViewById(R.id.signupActivity_buttonSignup);
 		mEmail =  findViewById(R.id.signupActivity_editTextEmail);
 		mPassword = findViewById(R.id.signupActivity_editTextPassword);
 		mConfirmPassword = findViewById(R.id.signupActivity_editTextConfirmPassword);
-		mBack = findViewById(R.id.signupActivity_backButton);
+		mBack = findViewById(R.id.signupActivity_buttonBack);
 
 		//TextClearing (try to handle w/ app:endIconMode)
 //		mEmail.setOnClickListener(new View.OnClickListener() {

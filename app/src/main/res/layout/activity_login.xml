@@ -66,7 +66,7 @@
         android:id="@+id/loginActivity_editTextPasswordLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/loginActivity_loginButton"
+        app:layout_constraintBottom_toTopOf="@+id/loginActivity_buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/loginActivity_loginButton"
+        android:id="@+id/loginActivity_buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
@@ -95,7 +95,7 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <Button
-        android:id="@+id/loginActivity_backButton"
+        android:id="@+id/loginActivity_buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"

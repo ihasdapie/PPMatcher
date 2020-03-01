@@ -13,5 +13,18 @@
     <string name="register">Register</string>
     <string name="back">Back</string>
     <string name="create_profile">Create Profile</string>
+    <string name="i_agree_to_the_terms_of_service">I agree to the Terms of Service</string>
+    <string name="title_activity_pp_creator_tabbed">ppCreatorTabbedActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="i_identify_as">I identify as:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="i_am_interested_in">I am interested in:</string>
+    <string name="interest_similarity"><![CDATA[I am interested in (Similar) <--> (Different) People]]></string>
+
 
 </resources>

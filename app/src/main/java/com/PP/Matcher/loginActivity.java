@@ -48,8 +48,8 @@ public class loginActivity extends AppCompatActivity {
 			}
 		};
 
-		mBack = findViewById(R.id.loginActivity_backButton);
-		mLogin = findViewById(R.id.loginActivity_loginButton);
+		mBack = findViewById(R.id.loginActivity_buttonBack);
+		mLogin = findViewById(R.id.loginActivity_buttonLogin);
 		mEmail = findViewById(R.id.loginActivity_editTextEmail);
 		mPassword = findViewById(R.id.loginActivity_editTextPassword);
 

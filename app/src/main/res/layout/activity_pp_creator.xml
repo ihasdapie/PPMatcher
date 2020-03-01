@@ -119,25 +119,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp" />
 
-            <TextView
-                android:id="@+id/ppCreatorActivity_textViewUserFacultyInterest"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="15sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-thin"
-                android:text="@string/i_am_interested_in"/>
-            <Spinner
-                android:id="@+id/ppCreatorActivity_spinnerUserFacultyInterest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp" />
-
             <EditText
+                android:id="@+id/ppCreatorActivity_editTextPrompt1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
@@ -148,8 +131,9 @@
                 android:hint="@string/prompt_1"/>
 
             <EditText
+                android:id="@+id/ppCreatorActivity_editTextResponse1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -158,6 +142,7 @@
                 android:hint="@string/response_1"/>
 
             <EditText
+                android:id="@+id/ppCreatorActivity_editTextPrompt2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
@@ -168,8 +153,9 @@
                 android:hint="@string/prompt_2"/>
 
             <EditText
+                android:id="@+id/ppCreatorActivity_editTextResponse2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -177,8 +163,9 @@
                 android:inputType="textMultiLine"
                 android:hint="@string/response_2"/>
             <EditText
+                android:id="@+id/ppCreatorActivity_editTextPrompt3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="mat"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -187,8 +174,9 @@
                 android:hint="@string/prompt_3"/>
 
             <EditText
+                android:id="@+id/ppCreatorActivity_editTextResponse3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"

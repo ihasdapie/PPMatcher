@@ -23,6 +23,7 @@ public class ppCreatorActivity extends AppCompatActivity {
 	private Button mCreateProfile;
 	private CheckBox mTermsOfService;
 	private SeekBar mUserInterestSimilarity;
+//toDo: getExtra not working "attempt to invoke on null object reference"
 	private String mUserID=getIntent().getStringExtra("mUSER_ID");
 
 

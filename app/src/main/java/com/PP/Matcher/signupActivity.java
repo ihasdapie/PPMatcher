@@ -38,8 +38,9 @@ public class signupActivity extends AppCompatActivity {
 				//if auth state changes, do something
 				final FirebaseUser mUsr = FirebaseAuth.getInstance().getCurrentUser();
 				if (mUsr != null){
-					Intent intent = new Intent(signupActivity.this, MainActivity.class);
-					intent.putExtra("mUSER_ID", mFirebaseAuth.getCurrentUser());
+					Intent intent = new Intent(signupActivity.this, ppCreatorActivity.class);
+					final String mUserID = mFirebaseAuth.getCurrentUser().getUid();
+					intent.putExtra("mUSER_ID", mUserID);
 					startActivity(intent);
 					finish();
 					return;
@@ -106,10 +107,6 @@ public class signupActivity extends AppCompatActivity {
 							if (task.isSuccessful()) {
 								Toast.makeText(signupActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
 								Toast.makeText(signupActivity.this, "Next Step: Create Profile", Toast.LENGTH_SHORT).show();
-								Intent intent = new Intent(signupActivity.this, ppCreatorActivity.class);
-								startActivity(intent);
-								finish();
-								return;
 							}
 						}
 					});

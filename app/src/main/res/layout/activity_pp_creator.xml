@@ -113,6 +113,8 @@
 
             <Spinner
                 android:id="@+id/ppCreatorActivity_spinnerUserFaculty"
+                android:entries="@array/faculty_array"
+                android:fontFamily="sans-serif-light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"

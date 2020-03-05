@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.om/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" >
 
+
+
     <com.lorentzos.flingswipe.SwipeFlingAdapterView
         android:id="@+id/frame"
         android:background="#ffeee9e2"

@@ -53,7 +53,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:endIconMode="clear_text"
             app:layout_constraintStart_toStartOf="parent">
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signupActivity_editTextEmail"
                 android:inputType="textEmailAddress"
                 android:layout_width="310dp"
@@ -72,7 +72,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent">
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signupActivity_editTextPassword"
             android:inputType="textPassword"
             android:layout_width="310dp"
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent">
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signupActivity_editTextConfirmPassword"
             android:inputType="textPassword"
             android:layout_width="310dp"

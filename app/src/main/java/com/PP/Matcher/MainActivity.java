@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> al;
     private ArrayAdapter<String> arrayAdapter;
-    private int i;
+    private int i;:
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

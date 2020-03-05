@@ -7,11 +7,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
 public class chooseLoginSignupActivity extends AppCompatActivity {
 
 	private Button mLogin, mSignup;
-	//todo: Add "back" button
+	//todo: Add "back" leftRightButton
 	//todo: Add registration landing page + email verification
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +46,5 @@ public class chooseLoginSignupActivity extends AppCompatActivity {
 		});
 
 
-
-
 	}
 }
-

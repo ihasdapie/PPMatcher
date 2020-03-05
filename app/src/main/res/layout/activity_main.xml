@@ -1,18 +1,37 @@
-<merge
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.om/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" >
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainActivity_constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
-
+    <Button
+        android:id="@+id/mainActivity_buttonSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_out"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="10dp"
+        android:onClick="signOutUser"/>
 
     <com.lorentzos.flingswipe.SwipeFlingAdapterView
-        android:id="@+id/frame"
-        android:background="#ffeee9e2"
+        android:id="@+id/mainActivity_swipeFlingAdapterView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:rotation_degrees="15.5"
         tools:context=".MyActivity" />
 
-    <include layout="@layout/button" />
 
-</merge>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

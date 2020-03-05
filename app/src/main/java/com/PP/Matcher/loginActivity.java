@@ -77,7 +77,7 @@ public class loginActivity extends AppCompatActivity {
 
 
 		mLogin.setOnClickListener(new View.OnClickListener() {
-			//signup user with signup button
+			//signup user with signup leftRightButton
 			@Override
 			public void onClick(View v) {
 				final String email = mEmail.getText().toString();

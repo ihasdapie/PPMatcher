@@ -36,6 +36,7 @@
     <string name="prompt_3">Prompt #3</string>
     <string name="response_3">Response #3</string>
     <string name="faculty_school_etc">Faculty/School/etc</string>
+    <string name="sign_out">Sign Out</string>
     <string-array name="faculty_array">
         <item>Applied Science</item>
         <item>Architecture and Landscape Architecture</item>

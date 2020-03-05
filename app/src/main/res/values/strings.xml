@@ -40,6 +40,7 @@
     <string name="year">Year</string>
     <string name="average">average</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="all_out_of_profiles">All out of profiles!</string>
     <string-array name="faculty_array">
         <item>Applied Science</item>
         <item>Architecture and Landscape Architecture</item>

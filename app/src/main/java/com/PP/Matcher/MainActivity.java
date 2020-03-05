@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     List<profileCard> rowItems;
 
+    private DatabaseReference mUserDb;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+
+
+
 
         getOtherUsers();
         rowItems = new ArrayList<profileCard>();
@@ -67,12 +74,12 @@ public class MainActivity extends AppCompatActivity {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-                Toast.makeText((MainActivity.this), "left", Toast.LENGTH_SHORT).show();
+                Toast.makeText((MainActivity.this), "You've rejected this profile :(", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                Toast.makeText((MainActivity.this), "right", Toast.LENGTH_SHORT).show();
+                Toast.makeText((MainActivity.this), "You've liked this profile!", Toast.LENGTH_SHORT).show();
             }
 
             @Override

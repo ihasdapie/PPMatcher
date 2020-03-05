@@ -31,7 +31,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="10dp"
-        android:onClick="editProfile"/>
+        android:onClick="editProfile"
+        android:layout_marginRight="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="@string/all_out_of_profiles"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/profile_textViewOutOfProfiles"/>
 
     <com.lorentzos.flingswipe.SwipeFlingAdapterView
         android:id="@+id/mainActivity_swipeFlingAdapterView"

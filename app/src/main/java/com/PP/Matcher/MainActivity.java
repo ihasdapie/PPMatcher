@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,18 +21,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private profileCard profileCards[];
+    private profileArrayAdaptor ppAdaptor;
 
     private ArrayList< ArrayList<String> > mUserOption;
     //{[average, faculty, firstName, lastName, prompt1, prompt2, prompt3...
     // ...response1, response2, response3, year]}
 
     private ArrayList<String> mTemp;
-    private ArrayAdapter<String> arrayAdapter;
-    private ArrayList<String> mDisgustingTemp;
     private FirebaseAuth mFirebaseAuth;
+    ListView listView;
+    List<profileCard> rowItems;
 
 
     @Override
@@ -42,31 +45,21 @@ public class MainActivity extends AppCompatActivity {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-        mUserOption = new ArrayList<>();
-        mTemp = new ArrayList<>();
         getOtherUsers();
+        rowItems = new ArrayList<profileCard>();
 
-        for (int i = 0; i < mUserOption.size(); i++){
-            mTemp.add(mUserOption.get(0).get(i));
-        }
-
-        System.out.println("-----------------------------------------");
-        System.out.println(mUserOption.get(0).get(0));
-        System.out.println("-----------------------------------------");
-
-
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.card, R.id.helloText, mTemp );
+        ppAdaptor = new profileArrayAdaptor(this, R.layout.profile, rowItems);
 
         SwipeFlingAdapterView flingContainer = findViewById(R.id.mainActivity_swipeFlingAdapterView);
 
-        flingContainer.setAdapter(arrayAdapter);
+        flingContainer.setAdapter(ppAdaptor);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
                 mTemp.remove(0);
-                arrayAdapter.notifyDataSetChanged();
+                ppAdaptor.notifyDataSetChanged();
             }
 
             @Override
@@ -113,21 +106,12 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()){
                     //{[average, faculty, firstName, lastName, prompt1, prompt2, prompt3...
                     // ...response1, response2, response3, year]}
-                    mDisgustingTemp = new ArrayList<>();
-                    temp.add(dataSnapshot.child("average").getValue().toString());
-                    temp.add(dataSnapshot.child("faculty").getValue().toString());
-                    temp.add(dataSnapshot.child("firstName").getValue().toString());
-                    temp.add(dataSnapshot.child("lastName").getValue().toString());
-                    temp.add(dataSnapshot.child("prompt1").getValue().toString());
-                    temp.add(dataSnapshot.child("prompt2").getValue().toString());
-                    temp.add(dataSnapshot.child("prompt3").getValue().toString());
-                    temp.add(dataSnapshot.child("response1").getValue().toString());
-                    temp.add(dataSnapshot.child("response2").getValue().toString());
-                    mDisgustingTemp.add(dataSnapshot.child("response3").getValue().toString());
-                    mDisgustingTemp.add(dataSnapshot.child("year").getValue().toString());
-                    mUserOption.add(mDisgustingTemp);
-                    mDisgustingTemp.clear()
-                    arrayAdapter.notifyDataSetChanged();
+                    profileCard newCard = new profileCard(dataSnapshot.getKey(), dataSnapshot.child("firstName").getValue().toString(), dataSnapshot.child("lastName").getValue().toString(),
+                            dataSnapshot.child("average").getValue().toString(), )
+
+
+
+                    ppAdaptor.notifyDataSetChanged();
                 }
             }
 

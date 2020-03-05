@@ -51,13 +51,13 @@ public class ppCreatorActivity extends AppCompatActivity {
 		mUserInterestSimilarity=findViewById(R.id.ppCreatorActivity_seekBarInterestSimilarity);
 		final DatabaseReference mCurrentUserData = FirebaseDatabase.getInstance().getReference().child("Users").child(mUserID);
 
-		mCreateProfile.setOnClickListener(new View.OnClickListener() {
+		mTermsOfService.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
-			public void onClick(View v) {
-				mTermsOfService.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-					@Override
-					public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-						if (isChecked){
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				if (isChecked){
+					mCreateProfile.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
 							mCurrentUserData.child("faculty").setValue(mUserFaculty.getSelectedItem().toString());
 							mCurrentUserData.child("average").setValue(parseInt(mUserAverage.getText().toString()));
 							mCurrentUserData.child("firstName").setValue(mUserFirstName.getText().toString());
@@ -91,13 +91,14 @@ public class ppCreatorActivity extends AppCompatActivity {
 							finish();
 							return;
 						}
-						else{
-							Toast.makeText(ppCreatorActivity.this, "Please accept the Terms of Service to Continue", Toast.LENGTH_LONG).show();
-						}
-					}
-				});
+					});
+				}
+				else{
+					Toast.makeText(ppCreatorActivity.this, "Please accept the Terms of Service to Continue", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
+
 
 	}
 }

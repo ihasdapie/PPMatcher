@@ -21,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> mTemp;
     private ArrayAdapter<String> arrayAdapter;
-    private int i;
-
+    private ArrayList<String> mDisgustingTemp;
     private FirebaseAuth mFirebaseAuth;
 
 
@@ -45,11 +43,16 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
 
         mUserOption = new ArrayList<>();
+        mTemp = new ArrayList<>();
+        getOtherUsers();
 
-
-        for (ArrayList <String> x : mUserOption){
-            mTemp.add(x.get(0));
+        for (int i = 0; i < mUserOption.size(); i++){
+            mTemp.add(mUserOption.get(0).get(i));
         }
+
+        System.out.println("-----------------------------------------");
+        System.out.println(mUserOption.get(0).get(0));
+        System.out.println("-----------------------------------------");
 
 
         arrayAdapter = new ArrayAdapter<>(this, R.layout.card, R.id.helloText, mTemp );
@@ -110,14 +113,20 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()){
                     //{[average, faculty, firstName, lastName, prompt1, prompt2, prompt3...
                     // ...response1, response2, response3, year]}
-                    ArrayList temp = new ArrayList<String>(Arrays.asList(mOtherUserDatabase.child("average").toString(),
-                            mOtherUserDatabase.child("faculty").toString(), mOtherUserDatabase.child("lastName").toString(),
-                            mOtherUserDatabase.child("prompt1").toString(), mOtherUserDatabase.child("prompt2").toString(),
-                            mOtherUserDatabase.child("prompt2").toString(), mOtherUserDatabase.child("response1").toString(),
-                            mOtherUserDatabase.child("response2").toString(), mOtherUserDatabase.child("response3").toString(),
-                            mOtherUserDatabase.child("year").toString()));
-
-                    mUserOption.add(temp);
+                    mDisgustingTemp = new ArrayList<>();
+                    temp.add(dataSnapshot.child("average").getValue().toString());
+                    temp.add(dataSnapshot.child("faculty").getValue().toString());
+                    temp.add(dataSnapshot.child("firstName").getValue().toString());
+                    temp.add(dataSnapshot.child("lastName").getValue().toString());
+                    temp.add(dataSnapshot.child("prompt1").getValue().toString());
+                    temp.add(dataSnapshot.child("prompt2").getValue().toString());
+                    temp.add(dataSnapshot.child("prompt3").getValue().toString());
+                    temp.add(dataSnapshot.child("response1").getValue().toString());
+                    temp.add(dataSnapshot.child("response2").getValue().toString());
+                    mDisgustingTemp.add(dataSnapshot.child("response3").getValue().toString());
+                    mDisgustingTemp.add(dataSnapshot.child("year").getValue().toString());
+                    mUserOption.add(mDisgustingTemp);
+                    mDisgustingTemp.clear()
                     arrayAdapter.notifyDataSetChanged();
                 }
             }

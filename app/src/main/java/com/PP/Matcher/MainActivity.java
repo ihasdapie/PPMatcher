@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
-                mTemp.remove(0);
+                rowItems.remove(0);
                 ppAdaptor.notifyDataSetChanged();
             }
 
@@ -106,11 +106,13 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()){
                     //{[average, faculty, firstName, lastName, prompt1, prompt2, prompt3...
                     // ...response1, response2, response3, year]}
-                    profileCard newCard = new profileCard(dataSnapshot.getKey(), dataSnapshot.child("firstName").getValue().toString(), dataSnapshot.child("lastName").getValue().toString(),
-                            dataSnapshot.child("average").getValue().toString(), )
+                    profileCard newCard;
+                    newCard = new profileCard(dataSnapshot.getKey(), dataSnapshot.child("firstName").getValue().toString(), dataSnapshot.child("lastName").getValue().toString(),("Average: "+
+                            dataSnapshot.child("average").getValue().toString() + "%"), dataSnapshot.child("faculty").getValue().toString(), ("Year: "+ dataSnapshot.child("year").getValue().toString()),
+                            dataSnapshot.child("prompt1").getValue().toString(), dataSnapshot.child("prompt2").getValue().toString(), dataSnapshot.child("prompt3").getValue().toString(),
+                            dataSnapshot.child("response1").getValue().toString(), dataSnapshot.child("response2").getValue().toString(), dataSnapshot.child("response3").getValue().toString());
 
-
-
+                    rowItems.add(newCard);
                     ppAdaptor.notifyDataSetChanged();
                 }
             }
@@ -142,6 +144,13 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAuth.signOut();
         Toast.makeText(MainActivity.this, "Signed Out!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MainActivity.this, chooseLoginSignupActivity.class);
+        startActivity(intent);
+        finish();
+        return;
+    }
+
+    public void editProfile(View view) {
+        Intent intent = new Intent(MainActivity.this, ppCreatorActivity.class);
         startActivity(intent);
         finish();
         return;

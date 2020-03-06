@@ -2,6 +2,8 @@ package com.PP.Matcher;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -37,6 +39,7 @@ public class ppCreatorActivity extends AppCompatActivity {
 		final String mUserID=getIntent().getStringExtra("mUSER_ID");
 		mTermsOfService=findViewById(R.id.ppCreatorActivity_checkBoxTermsOfService);
 		mCreateProfile=findViewById(R.id.ppCreatorActivity_createProfileButton);
+		mCreateProfile.setEnabled(false);
 		mUserFaculty= findViewById(R.id.ppCreatorActivity_spinnerUserFaculty);
 		mUserFirstName=findViewById(R.id.ppCreatorActivity_editTextFirstName);
 		mUserLastName=findViewById(R.id.ppCreatorActivity_editTextLastName);
@@ -49,6 +52,33 @@ public class ppCreatorActivity extends AppCompatActivity {
 		mResponse2=findViewById(R.id.ppCreatorActivity_editTextResponse2);
 		mResponse3=findViewById(R.id.ppCreatorActivity_editTextResponse3);
 		mUserInterestSimilarity=findViewById(R.id.ppCreatorActivity_seekBarInterestSimilarity);
+
+		mResponse3.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				mCreateProfile.setEnabled(false);
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				if (s.toString().trim().length()==0) {
+					mCreateProfile.setEnabled(false);
+				}
+				else{
+					mCreateProfile.setEnabled(true);
+				}
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+
+			}
+		});
+
+
+
 		final DatabaseReference mCurrentUserData = FirebaseDatabase.getInstance().getReference().child("Users").child(mUserID);
 
 		mTermsOfService.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

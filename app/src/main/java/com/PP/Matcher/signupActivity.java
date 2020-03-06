@@ -3,6 +3,8 @@ package com.PP.Matcher;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,6 +52,7 @@ public class signupActivity extends AppCompatActivity {
 		};
 
 		mSignup = findViewById(R.id.signupActivity_buttonSignup);
+		mSignup.setEnabled(false);
 		mEmail =  findViewById(R.id.signupActivity_editTextEmail);
 		mPassword = findViewById(R.id.signupActivity_editTextPassword);
 		mConfirmPassword = findViewById(R.id.signupActivity_editTextConfirmPassword);
@@ -68,6 +71,83 @@ public class signupActivity extends AppCompatActivity {
 //				mPassword.getText().clear();
 //			}
 //		});
+
+
+		mEmail.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				mSignup.setEnabled(false);
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				if (s.toString().trim().length()==0) {
+					mSignup.setEnabled(false);
+				}
+				else{
+					mSignup.setEnabled(true);
+				}
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+
+			}
+		});
+
+		mPassword.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				mSignup.setEnabled(false);
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				if (s.toString().trim().length()==0) {
+					mSignup.setEnabled(false);
+				}
+				else{
+					mSignup.setEnabled(true);
+				}
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+
+			}
+		});
+		
+		mConfirmPassword.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				mSignup.setEnabled(false);
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				if (s.toString().trim().length()==0) {
+					mSignup.setEnabled(false);
+				}
+				else{
+					mSignup.setEnabled(true);
+				}
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+
+			}
+		});
+
+
+
+
 
 
 

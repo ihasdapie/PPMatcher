@@ -3,6 +3,8 @@ package com.PP.Matcher;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,8 +52,59 @@ public class loginActivity extends AppCompatActivity {
 
 		mBack = findViewById(R.id.loginActivity_buttonBack);
 		mLogin = findViewById(R.id.loginActivity_buttonLogin);
+		mLogin.setEnabled(false);
 		mEmail = findViewById(R.id.loginActivity_editTextEmail);
 		mPassword = findViewById(R.id.loginActivity_editTextPassword);
+
+		mPassword.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				mLogin.setEnabled(false);
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				if (s.toString().trim().length()==0) {
+					mLogin.setEnabled(false);
+				}
+				else{
+					mLogin.setEnabled(true);
+				}
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+
+			}
+		});
+
+		mEmail.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				mLogin.setEnabled(false);
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				if (s.toString().trim().length()==0) {
+					mLogin.setEnabled(false);
+				}
+				else{
+					mLogin.setEnabled(true);
+				}
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+
+			}
+		});
+
+
 
 		mEmail.setOnClickListener(new View.OnClickListener() {
 			@Override

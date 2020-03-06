@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     List<profileCard> rowItems;
 
-    private DatabaseReference mUserDb;
+    private DatabaseReference mCurrentUserDb;
     private String mCurrentUserID;
 
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
-        mUserDb=FirebaseDatabase.getInstance().getReference().child("Users");
+        mCurrentUserDb=FirebaseDatabase.getInstance().getReference().child("Users");
         mCurrentUserID = FirebaseAuth.getInstance().getUid();
 
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText((MainActivity.this), "You've rejected this profile :(", Toast.LENGTH_SHORT).show();
                 profileCard card = (profileCard) dataObject;
                 String profileUserID = card.getUserID();
-                mUserDb.child(profileUserID).child("swipedBy").child("no").child(mCurrentUserID).setValue(true);
+                mCurrentUserDb.child(profileUserID).child("swipedBy").child("no").child(mCurrentUserID).setValue(true);
 
             }
 
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText((MainActivity.this), "You've liked this profile!", Toast.LENGTH_SHORT).show();
                 profileCard card = (profileCard) dataObject;
                 String profileUserID = card.getUserID();
-                mUserDb.child(profileUserID).child("swipedBy").child("yes").child(mCurrentUserID).setValue(true);
+                mCurrentUserDb.child(profileUserID).child("swipedBy").child("yes").child(mCurrentUserID).setValue(true);
                 isMatch(profileUserID);
             }
 
@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot.exists()){
                     //{[average, faculty, firstName, lastName, prompt1, prompt2, prompt3...
                     // ...response1, response2, response3, year]}
+
                     profileCard newCard;
                     newCard = new profileCard(dataSnapshot.getKey(), dataSnapshot.child("firstName").getValue().toString(), dataSnapshot.child("lastName").getValue().toString(),("Average: "+
                             dataSnapshot.child("average").getValue().toString() + "%"), dataSnapshot.child("faculty").getValue().toString(), ("Year: "+ dataSnapshot.child("year").getValue().toString()),
@@ -170,14 +171,14 @@ public class MainActivity extends AppCompatActivity {
         return;
     }
     private void isMatch(String profileUserID){
-        final DatabaseReference currentUserRightDb = mUserDb.child(mCurrentUserID).child("swipedBy").child(profileUserID);
+        final DatabaseReference currentUserRightDb = mCurrentUserDb.child(mCurrentUserID).child("swipedBy").child("yes").child(profileUserID);
         currentUserRightDb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
-                    Toast.makeText(MainActivity.this, "A Match!", Toast.LENGTH_SHORT).show();
-                    mUserDb.child(dataSnapshot.getKey()).child("Matches").child(mCurrentUserID).setValue(true);
-                    mUserDb.child(mCurrentUserID).child("Matches").child(dataSnapshot.getKey()).setValue(true);
+                    Toast.makeText(MainActivity.this, "It's A Match!", Toast.LENGTH_SHORT).show();
+                    mCurrentUserDb.child(dataSnapshot.getKey()).child("Matches").child(mCurrentUserID).setValue(true);
+                    mCurrentUserDb.child(mCurrentUserID).child("Matches").child(dataSnapshot.getKey()).setValue(true);
 
                 }
 

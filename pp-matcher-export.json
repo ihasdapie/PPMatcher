@@ -1,18 +1,19 @@
 {
-  "Users": {
-      "UserID": {
-        "faculty": true,
-        "average": true,
-        "firstName": true,
-        "lastName": true,
-        "prompt1": true,
-        "prompt2": true,
-        "year": true,
-        "response2": true,
-        "response1": true,
-        "prompt3": true,
-        "response3": true,
-        "interestSimilarity": true
-      }
+  "Users" : {
+    "UserID" : {
+      "Matches" : true,
+      "average" : true,
+      "faculty" : true,
+      "firstName" : true,
+      "interestSimilarity" : true,
+      "lastName" : true,
+      "prompt1" : true,
+      "prompt2" : true,
+      "prompt3" : true,
+      "response1" : true,
+      "response2" : true,
+      "response3" : true,
+      "year" : true
+    }
   }
 }
